@@ -1,8 +1,8 @@
 import HomeBack from "./components/HomeBack";
-import About from "./components/About";
-import Home from "./components/Home";
-import NewPost from "./components/NewPost";
-import Posts from "./components/Posts";
+// import About from "./components/About";
+// import Home from "./components/Home";
+// import NewPost from "./components/NewPost";
+// import Posts from "./components/Posts";
 
 
 export default function Page() {

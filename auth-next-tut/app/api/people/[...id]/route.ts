@@ -8,7 +8,9 @@ export default function personHandler(
 ) {
   const { query } = req;
   const { id } = query;
+  console.log(req,id)
   const person = people.find((p) => p.id === id);
+  console.log(person)
 
   // User with id exists
   return person
