@@ -15,7 +15,10 @@ async function getData() {
 }
 export default async function HandelUser({ params } :Props) {
   let isValidating: boolean = false
+  // console.log(params.id)
   // const datas :any[] = await getData() 
+  // const datas: any[] = people.map((p)=>p.id == params.id)
+  const datas: Person[] = people.filter((p)=>p.id == params.id)
   return (
     <table>
       <thead>
@@ -37,8 +40,10 @@ export default async function HandelUser({ params } :Props) {
             </td>
           ) : (
             <>
-              {data.map((el, i) =>
-                <div className="flex text-wrap" >
+              {datas.map((el, i) =>
+              // {data.map((el, i) =>
+                // <div className="flex text-wrap" >
+                  <>
                   <td key={i}>{el.name}</td>
                   <td key={i}>{el.height}</td>
                   <td key={i}>{el.mass}</td>
@@ -46,7 +51,8 @@ export default async function HandelUser({ params } :Props) {
                   <td key={i}>{el.skin_color}</td>
                   <td key={i}>{el.eye_color}</td>
                   <td key={i}>{el.gender}</td>
-                </div>
+                  </>
+                // </div>
               )}
             </>
           )}
