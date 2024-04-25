@@ -20,15 +20,13 @@
 //     </html>
 //   );
 // }
+import Nav from '@components/Nav'
 import '@styles/globals.css'
-
 
 export const metadata = {
   title:"Promptopia",
   description:"Discover & Share AI Prompts",
 }
-
-type Props = {}
 
 const RootLayout = ({children,}: Readonly<{children:React.ReactNode}>) => {
   return (
@@ -37,7 +35,8 @@ const RootLayout = ({children,}: Readonly<{children:React.ReactNode}>) => {
       <div className='main'>
         <div className='gradient' /> 
       </div>
-      <main>
+      <main className='app'>
+        <Nav/>
         {children}
       </main>
       </body>
