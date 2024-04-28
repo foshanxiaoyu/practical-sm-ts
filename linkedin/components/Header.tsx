@@ -1,6 +1,9 @@
 import Image from 'next/image'
 import {Briefcase, HomeIcon, MessagesSquare, SearchIcon, UserIcon} from 'lucide-react'
 import Link from 'next/link'
+
+// https://lucide.dev/icons/ 开源Icons
+
 type Props = {}
 
 export default function Header({}: Props) {

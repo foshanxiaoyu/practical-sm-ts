@@ -2,6 +2,7 @@ import Link from "next/link"
 
 type Props = {}
 
+
 export default function ProductList({}: Props) {
     const products = [{id:1,name:"blue",height:'234232'},{id:2,name:"red",height:'34211'},{id:3,name:"green",height:'523412'}]
   return (
