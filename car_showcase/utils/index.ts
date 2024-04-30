@@ -1,8 +1,12 @@
 import { carProps,FilterProps } from "@components/CarCard";
 
-export async function fetchCars() {
+export async function fetchCars(fillters:FilterProps) {
 
-const url = 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=corolla';
+  const {manufacturer,year,model,limit, fuel } = fillters // fetchCars 参数
+
+const url = `https://
+cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}
+&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`;
 // const url = 'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars';
 
 const options = {
@@ -91,10 +95,11 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 //   }
   
   export const generateCarImageUrl = (car: carProps, angle?: string) => {
-    const url = new URL("https://cdn.imagin.studio/getimage");
+    const url = new URL("https://cdn.imagin.studio/getimage"); // 这个api仅向商业有营业执照的提供API
     const { make, model, year } = car;
   
-    url.searchParams.append('customer', process.env.NEXT_PUBLIC_IMAGIN_API_KEY || '');
+    // url.searchParams.append('customer', process.env.NEXT_PUBLIC_IMAGIN_API_KEY || '');
+    url.searchParams.append('customer','hrjavascript-mastery');
     url.searchParams.append('make', make);
     url.searchParams.append('modelFamily', model.split(" ")[0]);
     url.searchParams.append('zoomType', 'fullscreen');

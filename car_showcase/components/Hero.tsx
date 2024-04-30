@@ -2,6 +2,7 @@
 import React from 'react'
 import CustomButton from './CustomButton'
 import Image from 'next/image'
+import { generateCarImageUrl } from '@utils'
 
 type Props = {}
 
@@ -29,6 +30,7 @@ export default function Hero({ }: Props) {
             <div className='hero__image-container'>
                 <div className='hero__image'>
                     <Image src='/hero.png' alt='hero' fill className='object-contain' />
+                    {/* <Image src={generateCarImageUrl(car)} alt='hero' fill className='object-contain' /> */}
                     <div className='hero__image-overlay' >
                         
                     </div>

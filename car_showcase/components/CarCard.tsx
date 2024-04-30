@@ -60,7 +60,7 @@ function CarCard({ car }: CarCardProps) {
 
             {/* 车图  api fetch */}
             <div className='relative w-full h-40 my-3 object-contain'>
-                <Image src='/hero.png'//{generateCarImageUrl(car)} 
+                <Image src='/carModel.png' //{generateCarImageUrl(car)} ;初始时用 '/hero.png'
                     alt='car model' fill priority
                     className='object-contain' />
             </div>
