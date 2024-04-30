@@ -3,10 +3,11 @@ import CustomFiler from "@components/CustomFiler";
 import Hero from "@components/Hero";
 import SearchBar from "@components/SearchBar";
 import SelectBox from "@components/SelectBox";
+import ShowMore from "@components/ShowMore";
 import { fuels, yearsOfProduction } from "@constants";
 import { fetchCars } from "@utils";
 
-type SerchParams = {
+type SearchParams = {
   manufacturer:string,
   year: number,
   fuel?:string ,
@@ -47,11 +48,17 @@ export default async function Home({searchParams}:any) { // https://www.youtube.
           {!isDataEmpty 
           ?(
             <section>
+              {/* 显示  car卡 */}
               <div className="home__cars-wrapper">
               {allCars.map((car,idx)=>(
                 <CarCard key={idx} car ={car} />
               ))}
               </div>
+              {/* 展示更多 */}
+              <ShowMore 
+              pageNumber ={(searchParams.pageNumber || 10) /10} 
+              isNext = {(searchParams.limit || 10)>allCars.length}
+              />
             </section>
            )
           :(
