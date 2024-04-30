@@ -3,6 +3,7 @@ import CustomFiler from "@components/CustomFiler";
 import Hero from "@components/Hero";
 import SearchBar from "@components/SearchBar";
 import SelectBox from "@components/SelectBox";
+import { fuels, yearsOfProduction } from "@constants";
 import { fetchCars } from "@utils";
 
 type SerchParams = {
@@ -39,8 +40,8 @@ export default async function Home({searchParams}:any) { // https://www.youtube.
           {/* <SelectBox /> */}
           <div className="home__filter-container">
           {/* fuel:燃料 */}
-          {/* <CustomFiler title='fuel' /> 
-          <CustomFiler title='year' /> */}
+          <CustomFiler title='fuel' options={fuels} /> 
+          <CustomFiler title='year'  options={yearsOfProduction} />
           </div>
         </div>
           {!isDataEmpty 

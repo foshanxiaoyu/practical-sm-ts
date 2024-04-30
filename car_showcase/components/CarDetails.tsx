@@ -3,7 +3,6 @@ import Image from "next/image";
 
 import { Dialog, Transition } from "@headlessui/react";
 import { carProps } from './CarCard'
-import { relative } from "path";
 import { generateCarImageUrl } from "@utils";
 
 type CarDetailsProps = {
@@ -16,6 +15,7 @@ function CarDetails({ isOpen, closeModel, car }: CarDetailsProps) {
 
     return (
         <>
+            {/* Transition 过渡 */}
             <Transition appear show={isOpen} as={Fragment}>
                 <Dialog as='div' className='relative z-10' onClose={closeModel}>
                     <Transition.Child
@@ -41,6 +41,7 @@ function CarDetails({ isOpen, closeModel, car }: CarDetailsProps) {
                                 leaveFrom="opacityy-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
+                                {/* 弹出对话 Panel  */}
                                 <Dialog.Panel className='relative w-full
                                  max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl
                                   bg-white p-6 text-left shadow-xsl transition-all flex flex-col gap-5'>
@@ -83,7 +84,7 @@ function CarDetails({ isOpen, closeModel, car }: CarDetailsProps) {
                                             </div>
                                         </div>
                                     </div>
-                                    {/**图片下的具体列式渲染 */}
+                                    {/**图片下的具体性能或属性列式渲染 */}
                                     <div className=" flex-1 flex flex-col gap-2">
                                         {/*product model  */}
                                         <h2 className="font-semibold text-xl capitalize">{car.make}{car.model}</h2>
@@ -98,9 +99,7 @@ function CarDetails({ isOpen, closeModel, car }: CarDetailsProps) {
                                             ))}
                                         </div>
                                     </div>
-
                                 </Dialog.Panel >
-
                             </Transition.Child >
                         </div>
 
