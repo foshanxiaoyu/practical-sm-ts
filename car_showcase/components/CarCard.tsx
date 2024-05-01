@@ -11,7 +11,6 @@ export interface FilterProps {
     model?: string;
     limit?: number;
     fuel?: string;
-
 }
 
 export interface carProps {
@@ -28,6 +27,7 @@ export interface carProps {
     transmission: string,
     year: number,
 }
+
 export interface CarCardProps {
     car: carProps
 }

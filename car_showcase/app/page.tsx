@@ -18,7 +18,7 @@ type SearchParams = {
 export default async function Home({searchParams}:any) { // https://www.youtube.com/watch?v=pUNSHPyVryU
   const allCars = await fetchCars({ // 加上参数来 fetch
     manufacturer:searchParams.manufacturer || '',
-    year: searchParams.year || 2022,
+    year: searchParams.year || 2015,
     fuel:searchParams.fuel || '',
     limit:searchParams.limit || 10,
     model:searchParams.model || '',
