@@ -1,4 +1,4 @@
-import { MongoClient,  MongoClientOptions,  ServerApiVersion } from 'mongodb';
+import { MongoClient,  MongoClientOptions} from 'mongodb';
 require('dotenv').config();
 
 export interface ClientInfo {
