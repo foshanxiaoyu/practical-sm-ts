@@ -13,7 +13,7 @@ const vehicles = [
 ];
 
 const app = express();
-const PORT = 30002;
+const PORT = 9999;
 
 const API_KEY = 'your_api_key';
 
