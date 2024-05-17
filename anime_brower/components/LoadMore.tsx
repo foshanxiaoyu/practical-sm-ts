@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useInView } from 'react-intersection-observer' // 用到 hook
 import AnimeCard, { AnimeProp } from "./AnimeCard";
 
-let page = 2
+let page = 2 // init page for add more
 function LoadMore() {
   const { ref, inView } = useInView() // ref 触法参照，触法条件
   const [data, setData] = useState<AnimeProp[]>([])
