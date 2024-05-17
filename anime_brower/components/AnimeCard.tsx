@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { motion } from 'framer-motion' // 祯动画
+import { MotionDiv } from "./MotionDiv";
 
 export interface AnimeProp  {
     id:string,
@@ -16,10 +18,27 @@ interface Props {
     anime:AnimeProp,
     index:number
 }
-const AnimeCard = ({anime}: Props) => {
+const variants = {
+  hidden :{opacity:0},visible:{opacity:1},
+}
+
+const AnimeCard = ({anime,index}: Props) => {
   const headUri = 'https://shikimori.one'
   return (
-    <div className="max-w-sm rounded relative w-full">
+    // 没使用祯动画的div
+    // <div className="max-w-sm rounded relative w-full">
+    // motion.div 是一个client 组件，而这server组件需要MAP
+    <MotionDiv 
+    variants={variants} // variants(变体)
+    initial='hidden'
+    animate='visible'
+    transition={{
+      delay:index*0.25, //成祯调用 card
+      ease:'easeInOut',
+      duration:0.5
+    }}
+    viewport={{amount:0}}
+    className="max-w-sm rounded relative w-full">
       <div className="relative w-full h-[37vh]">
         <Image
           src={headUri+anime.image.original}
@@ -64,7 +83,7 @@ const AnimeCard = ({anime}: Props) => {
           </div>
         </div>
       </div>
-    </div>
+    </MotionDiv>
 
   )
 }
