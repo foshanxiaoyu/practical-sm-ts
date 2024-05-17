@@ -17,11 +17,12 @@ interface Props {
     index:number
 }
 const AnimeCard = ({anime}: Props) => {
+  const headUri = 'https://shikimori.one'
   return (
     <div className="max-w-sm rounded relative w-full">
       <div className="relative w-full h-[37vh]">
         <Image
-          src={anime.image.original}
+          src={headUri+anime.image.original}
           alt={anime.name}
           fill
           className="rounded-xl"
