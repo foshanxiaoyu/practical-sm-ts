@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { motion } from 'framer-motion' // 祯动画
+// import { motion } from 'framer-motion' // 祯动画
 import { MotionDiv } from "./MotionDiv";
 
 export interface AnimeProp  {

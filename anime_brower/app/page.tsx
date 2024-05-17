@@ -2,7 +2,7 @@
 /*
  data的API格式可REF：https://shikimori.one/api/doc/1.0/animes/index
 */
-import AnimeCard ,{AnimeProp} from "@components/AnimeCard";
+// import AnimeCard ,{AnimeProp} from "@components/AnimeCard";// cover action.ts-tsx
 import LoadMore from "@components/LoadMore";
 import fetchAnime from "./action";
 
