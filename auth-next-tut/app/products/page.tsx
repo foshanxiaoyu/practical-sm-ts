@@ -4,7 +4,12 @@ type Props = {}
 
 
 export default function ProductList({}: Props) {
-    const products = [{id:1,name:"blue",height:'234232'},{id:2,name:"red",height:'34211'},{id:3,name:"green",height:'523412'}]
+    const products = 
+    [
+      {id:1,name:"blue",height:'234232'},
+      {id:2,name:"red",height:'34211'},
+      {id:3,name:"green",height:'523412'}
+    ]
   return (
     <div>
         <h1>ProductList</h1>

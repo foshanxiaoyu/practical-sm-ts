@@ -23,8 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-
-
+      <header style={{ backgroundColor:"lightblue",padding:"1rem"}}>
+        <p>Hearder</p>
+      </header>
         {/* <div className="container mx-auto px-4 py-8"> */}
         <div className="border-blue-400 py-2 px-1 m-2">
             <div className="flex flex-row gap-4 border border-red-500 py-4" >
@@ -42,6 +43,9 @@ export default function RootLayout({
           // </div> */}
 
         {children}
+        <footer style={{backgroundColor:'ghostwhite',padding:'2rem'}}>
+          <p>Footer</p>
+        </footer>
       </body>
     </html>
   );

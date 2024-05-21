@@ -1,11 +1,11 @@
 import { Metadata } from "next"
 
-type Props = {params:{id:string}}
+type Props = {params:{productId:string}}
 
 export const  genrateMetadata = async ({params}:Props):Promise<Metadata> =>{
   const titleTop = await new Promise(resolve=>{
     setTimeout(()=>{
-      resolve(`XXX product${params.id}`)
+      resolve(`XXX product${params.productId}`)
     },100)
   })
   return {
@@ -15,8 +15,8 @@ export const  genrateMetadata = async ({params}:Props):Promise<Metadata> =>{
 
 export default function page({
   params,
-}:{params:{id:string}}) {
+}:{params:{productId:string}}) {
   return (
-    <div>Detail about product  {params.id}</div>
+    <div>Detail about product  --{params.productId}</div>
   )
 }

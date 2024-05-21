@@ -10,8 +10,9 @@ export default function ProductDetailLayout({
     // }
     return (
       <>
+        <h2 className=" text-wrap text-fuchsia-500">Detail product Page</h2>
         {children}
-        <h2>Featured products</h2>
+        <h2 className=" text-wrap text-fuchsia-300">Featured products</h2>
       </>
     );
   }
