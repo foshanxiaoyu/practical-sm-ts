@@ -1,4 +1,4 @@
-import HomeBack from "./components/HomeBack";
+import HomeBack from "../components/HomeBack";
 // import About from "./components/About";
 // import Home from "./components/Home";
 // import NewPost from "./components/NewPost";

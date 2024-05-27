@@ -1,4 +1,10 @@
+import { Metadata } from "next"
 
+export const metadata:Metadata={
+    title:{
+        absolute:'Posts',
+    }
+}
 type Props = {params:{id:string}}
 // Data Fetching
 

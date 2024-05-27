@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import PersonComponent from "../components/PersonComponent";
+import PersonComponent from "../../components/PersonComponent";
 import type { Person } from "@/app/person/interfaces";
 
 
