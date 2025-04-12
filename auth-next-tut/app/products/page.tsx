@@ -14,7 +14,7 @@ type product_1Props = {
   description: string,
   category: string,
   price: number,
-  brand:string,
+  brand: string,
 }
 async function getProducts() {
   try {
@@ -35,26 +35,30 @@ export default async function ProductList() {
   //   NoLoadArry = false
   return (
     <>
-      <div className=" align-middle justify-center text-center font-bold "><p>产品列表</p>
-        {products_1 ? (
-          products_1.products.map((item: product_1Props, idx: number) => (
-            <>
-              <div key={idx} className=" w-1/3 " >
-                <Link href ={ `/products/${item.id}`} as={`/products/${item.id}`} >
-                <PdCard >
-                  <p>{item.title}</p>
-                  <p>{item.price}</p>
-                </PdCard>
-                </Link>
-              </div>
-              <p  >He asdfasd alsdfjk;adfjp; eiwojfakdjpjfn</p>
+      {/* <div className=" align-middle justify-center text-center font-bold "> */}
+      <div >
+        <p>产品列表</p>
+        <section className="grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-10">
+          {products_1 ? (
+            products_1.products.map((item: product_1Props, idx: number) => (
+              <>
+                <div key={idx}  >
+                {/* <div key={idx} className=" w-1/3 " > */}
+                  <Link href={`/products/${item.id}`} as={`/products/${item.id}`} >
+                    <PdCard >
+                      <p>{item.title}</p>
+                      <p>{item.price}</p>
+                    </PdCard>
+                  </Link>
+                </div>
               </>
-          ))
-        ) : (
-          <div>
-            <PdCard>没拿到数据。</PdCard>
-          </div>
-        )}
+            ))
+          ) : (
+            <div>
+              <PdCard>没拿到数据。</PdCard>
+            </div>
+          )}
+        </section>
       </div>
     </>
   )

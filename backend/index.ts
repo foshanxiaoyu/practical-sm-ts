@@ -15,7 +15,7 @@ const vehicles = [
 const app = express();
 const PORT = 9999;
 
-const API_KEY = 'your_api_key';
+const API_KEY = 'your-api-key';
 
 
 app.use(express.json());
@@ -95,3 +95,9 @@ app.get('/search', (req: Request, res: Response) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+
+// 20250120
+// 查看端口占用 netstat -ano | findstr "9999" => 拿到 PID
+// tasklist | findstr "6084" -> 拿到占用的程序名 
+// tasklist /T /F /PID 6084  => 终止监听的占用端口的程序  taskkill /f /t /pid 21452
