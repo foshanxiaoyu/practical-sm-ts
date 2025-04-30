@@ -1,0 +1,14 @@
+For this course, we'll build a financial dashboard that has:
+在本课程中，我们将构建一个财务仪表板，其具有：
+
+A public home page.  公共主页。
+A login page.  登录页面。
+Dashboard pages that are protected by authentication.
+受身份验证保护的仪表板页面。
+The ability for users to add, edit, and delete invoices.
+用户可以添加、编辑和删除发票。
+The dashboard will also have an accompanying database, which you'll set up in a later chapter.
+仪表板还将有一个附带的数据库，您将在后面的章节中设置它。
+
+By the end of the course, you'll have the essential skills needed to start building full-stack Next.js applications.
+到课程结束时，您将掌握开始构建全栈 Next.js 应用程序所需的基本技能。

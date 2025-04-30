@@ -1,6 +1,8 @@
 import express, { Request, Response } from 'express';
 import { ServerApiVersion } from 'mongodb';
 import {dataSources, switchDataSourcesWithRetry,DatabasesBySource,listDbs } from './dbf'
+import { fetchAndDisplayUsers } from './showUser';
+import { fetchNewText } from './showStock';
 
 
 
@@ -32,6 +34,26 @@ const verifyApiKey = (req: Request, res: Response, next: Function) => {
 
 // Apply API key verification middleware to all routes
 app.use(verifyApiKey);
+
+
+// Endpoint to get placehandlelUser
+app.get('/handeruser', async (req: Request, res: Response) => {
+  try {
+    const users = await fetchAndDisplayUsers();
+    res.json(users); // Send user data as JSON response
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch users' });
+  }
+});
+// Endpoint to get placehandlelUser
+app.get('/alph', async (req: Request, res: Response) => {
+  try {
+    const newtest = await fetchNewText();
+    res.json(newtest); // Send user data as JSON response
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch users' });
+  }
+});
 
 // Endpoint to get all vehicles
 app.get('/vehicles', (req: Request, res: Response) => {
