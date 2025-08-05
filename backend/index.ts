@@ -45,13 +45,14 @@ app.get('/handeruser', async (req: Request, res: Response) => {
     res.status(500).json({ error: 'Failed to fetch users' });
   }
 });
-// Endpoint to get placehandlelUser
+
+// Endpoint to get https://www.alphavantage.co
 app.get('/alph', async (req: Request, res: Response) => {
   try {
-    const newtest = await fetchNewText();
-    res.json(newtest); // Send user data as JSON response
+    const newtext = await fetchNewText();
+    res.json(newtext); // Send user data as JSON response
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch users' });
+    res.status(500).json({ error: 'Failed to fetch stock data' });
   }
 });
 

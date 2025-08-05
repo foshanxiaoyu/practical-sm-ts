@@ -34,7 +34,7 @@ export interface MetaData {
         throw new Error(`HTTP error: ${response.status}`);
       }
   
-      const newtext: NewText[] = await response.json() ; //as any;
+      const newtext: NewText[] = await response.json() as any; //as any;
     //   console.log(users)
       
       return newtext ;
